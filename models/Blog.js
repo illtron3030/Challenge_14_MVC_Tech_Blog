@@ -1,22 +1,22 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {}
+class Blog extends Model {}
 
-Comment.init({
-    body: {
+Blog.init({
+    title: {
+         type: DataTypes.STRING,
+         allowNull:false
+    },
+    content: {
         type:DataTypes.TEXT,
         allowNull:false
-    },
-    date: {
-        type:DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
     }
 },{
     sequelize,   
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment',
+    modelName: 'blog',
 });
 
-module.exports=Comment
+module.exports=Blog

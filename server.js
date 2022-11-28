@@ -7,7 +7,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3003;
 
 const { User, Blog, Comment } = require("./models");
 

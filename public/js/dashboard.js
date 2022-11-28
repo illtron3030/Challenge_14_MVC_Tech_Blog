@@ -21,7 +21,6 @@ newBlog.addEventListener("submit", event => {
     var title = document.querySelector("#title").value;
     var content = document.querySelector("#content").value
     event.preventDefault()
-    //console.log('you clicked me')
     if (!title || !content) {
         alert('Please enter both title and content')
         return;

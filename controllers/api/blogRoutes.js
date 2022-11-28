@@ -50,7 +50,7 @@ router.post("/", (req, res) => {
       });
 });
 
-// update post - withAuth fx 
+// update post
 router.put("/:id", (req, res) => {
   if(!req.session.user){
     return res.status(401).json({msg:"Please login!"})

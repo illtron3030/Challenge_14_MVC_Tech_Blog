@@ -47,10 +47,10 @@ router.get("/blogs/:id", (req, res) =>{
         console.log('==============')
         console.log(hbsBlog)
         if (dbBlog.userId != req.session.user.id) {
-// If not your post -> render comment page over homepage
+// If not your post; render comment page over homepage
             return res.render('comment', {hbsBlog, loggedIn, username:req.session.user?.username})
         }
-        // If your post -> render update/delete page over your dashboard
+        // If your post; render update/delete page over your dashboard
         res.render("updateDelete", {hbsBlog, loggedIn, username:req.session.user?.username})
       })
       .catch(err => {

@@ -65,13 +65,13 @@ router.post("/login", (req, res) => {
       }
       // compare password with saved hash
       if(bcrypt.compareSync(req.body.password,foundUser.password)){
-        // if pw matches, create session for user 
+        // if password matches, create session for user 
         req.session.user = {
           id:foundUser.id,
           username:foundUser.username
         }
         return res.json(foundUser)
-        // redirect page??
+        // redirect
       } else {
         return res.status(400).json({msg:"wrong login credentials"})
       }
